@@ -1,0 +1,331 @@
+aid: legal-and-general
+name: Legal & General
+review:
+  question: Does Legal & General expose a real, public, self-serve developer portal
+    or downloadable API definitions for its insurance products?
+  answer: false
+  date: '2026-07-25'
+  reviewer: API Evangelist
+  homeMarket: United Kingdom
+  tier: carrier-life-health
+  gated: true
+findings:
+  summary: |
+    Legal & General publishes NO public developer portal, NO public API
+    reference, and NO downloadable OpenAPI/Swagger definition. Every
+    conventional developer host was probed on 2026-07-25 and none resolves:
+    developer., developers., docs., api. and apis..legalandgeneral.com all
+    return no DNS answer (curl exit 000). On the primary site, /developers,
+    /api, /developer, /partners and /integrations all return HTTP 404, while
+    the site root returns HTTP 200. /openapi.json, /swagger.json and /api-docs
+    return HTTP 404. /.well-known/openid-configuration and
+    /.well-known/oauth-authorization-server both return HTTP 404 on the
+    primary host — no anonymous OIDC/OAuth discovery document is served.
+
+    The nearest thing to an integration surface is the adviser area at
+    https://www.legalandgeneral.com/adviser/ (HTTP 200), which is a
+    LOGIN WALL, not a developer portal: it carries Login and Register links,
+    states it "is designed to give professional financial advisers information
+    and tools ... and should not be relied upon by private investors", and
+    exposes no reference documentation, no schemas and no self-serve
+    credentials. Classified as (b) partner/agent login wall.
+
+    Legal & General's real APIs exist, but they are bilateral and announced by
+    the COUNTERPARTY rather than published by Legal & General. Confirmed from
+    Legal & General's own newsroom (HTTP 200): Legal & General Home Finance
+    provides "real time Equity Release Quotations, KFIs and Applications"
+    into Iress' adviser portal "The Exchange"; equivalent API links exist into
+    the Air Sourcing platform and the Advise Wise platform; and Legal & General
+    Mortgage Club launched an API integration with Kensington Mortgages. None
+    of these is obtainable by an unaffiliated developer — they are integrations
+    into named adviser-software platforms.
+
+    On the protection side, adviser quote-and-apply runs through OLP Connect
+    and the Existing Business Agent Hub, reached from
+    https://www.legalandgeneral.com/adviser/protection/services/registration-services/
+    (HTTP 200). That page documents end-user functionality (quotes,
+    applications, dynamic underwriting instant decisions, digital Declaration
+    of Health, trusts, direct debit changes, policy cancellation) and contains
+    no technical integration specification, no API documentation and no
+    self-serve signup; onboarding is via a Business Development Manager or
+    agency.enquiries@landg.com.
+
+    The only public Legal & General code is a front-end design system, not an
+    API: the GitHub organisation https://github.com/Legal-and-General (HTTP 200)
+    holds three public repositories — canopy (Angular design system),
+    canopy-design-tokens, and dependabot-batcher. No API definitions, no SDKs,
+    no specs.
+  developerPortal:
+    url: ''
+    confirmed: false
+    classification: none — no self-serve developer portal exists
+    nearestSurface: https://www.legalandgeneral.com/adviser/
+    nearestSurfaceStatus: 200
+    nearestSurfaceClassification: partner/agent login wall
+  probes:
+  - url: https://www.legalandgeneral.com/
+    status: 200
+    note: Primary site root resolves.
+  - url: https://developer.legalandgeneral.com
+    status: 000
+    note: No DNS record.
+  - url: https://developers.legalandgeneral.com
+    status: 000
+    note: No DNS record.
+  - url: https://docs.legalandgeneral.com
+    status: 000
+    note: No DNS record.
+  - url: https://api.legalandgeneral.com
+    status: 000
+    note: No DNS record.
+  - url: https://apis.legalandgeneral.com
+    status: 000
+    note: No DNS record.
+  - url: https://www.legalandgeneral.com/developers
+    status: 404
+  - url: https://www.legalandgeneral.com/developer
+    status: 404
+  - url: https://www.legalandgeneral.com/api
+    status: 404
+  - url: https://www.legalandgeneral.com/partners
+    status: 404
+  - url: https://www.legalandgeneral.com/integrations
+    status: 404
+  - url: https://www.legalandgeneral.com/openapi.json
+    status: 404
+  - url: https://www.legalandgeneral.com/swagger.json
+    status: 404
+  - url: https://www.legalandgeneral.com/api-docs
+    status: 404
+  - url: https://www.legalandgeneral.com/.well-known/openid-configuration
+    status: 404
+  - url: https://www.legalandgeneral.com/.well-known/oauth-authorization-server
+    status: 404
+  - url: https://www.legalandgeneral.com/adviser/
+    status: 200
+    note: Adviser area — login wall with Login/Register, no reference docs.
+  - url: https://www.legalandgeneral.com/adviser/log-in/
+    status: 200
+    note: Adviser login.
+  - url: https://www.legalandgeneral.com/log-in/
+    status: 200
+    note: Customer login.
+  - url: https://www.legalandgeneral.com/adviser/protection/services/registration-services/
+    status: 200
+    note: OLP Connect / Agent Hub registration — no technical integration docs.
+  - url: https://group.legalandgeneral.com/
+    status: 200
+    note: Group corporate site.
+  - url: https://github.com/Legal-and-General
+    status: 200
+    note: 3 public repos, all front-end design system tooling. No API artifacts.
+  - url: https://am.landg.com/
+    status: 200
+    note: Legal & General Asset Management site. No developer surface found.
+  - url: https://developer.landg.com
+    status: 000
+    note: No DNS record.
+  - url: https://api.landg.com
+    status: 000
+    note: No DNS record.
+  - url: https://developer.lgim.com
+    status: 000
+    note: No DNS record.
+  - url: https://api.lgim.com
+    status: 000
+    note: No DNS record.
+  - url: https://api.lgamerica.com
+    status: 403
+    note: >-
+      Resolves to an IIS/Azure Application Gateway backend returning "You do not
+      have permission to view this directory or page." Belongs to the former US
+      protection arm; no documentation, no discovery, no public surface. Not
+      counted as a developer portal.
+  specs:
+    openapiHarvested: false
+    count: 0
+    note: >-
+      No OpenAPI, Swagger, AsyncAPI, GraphQL SDL, .proto or Postman collection
+      was found in any public Legal & General surface. The openapi/ directory is
+      deliberately omitted from this repo because nothing real exists to save.
+  acord:
+    posture: no ACORD reference found; UK adviser messaging runs on Origo/Unipass instead
+    detail: >-
+      No occurrence of ACORD, AL3, ACORD XML, ACORD certified or NGDS was found
+      anywhere in Legal & General's public web surface, documentation, newsroom
+      or GitHub organisation. This is expected: ACORD's AL3/IVANS agency-download
+      rails are a US property-and-casualty phenomenon, and Legal & General is a
+      UK life, health and pensions carrier. The functional UK equivalent it does
+      use is Origo — the UK life and pensions standards and messaging body.
+      Legal & General adopted Origo's Unipass Letter of Authority for its
+      workplace pensions business, supports Unipass digital certificates as
+      adviser identity for OLP Connect and Adviser Centre access, and launched
+      Origo Track My Apps for adviser case tracking. Origo publishes APIs to its
+      member firms; Legal & General consumes and participates rather than
+      publishing.
+    standardsBodies:
+    - Origo (UK life and pensions messaging and Unipass identity)
+    ivans: not applicable — no US P&C agency-download surface
+  insuranceVerbs:
+    quote:
+      exposed: true
+      access: partner-only
+      note: >-
+        Real-time equity release quotations from Legal & General Home Finance are
+        exposed through named adviser platforms (Iress "The Exchange", Air
+        Sourcing, Advise Wise). Protection quotes run through OLP Connect behind
+        adviser login. Not obtainable by an unaffiliated developer.
+    bind:
+      exposed: true
+      access: partner-only
+      note: >-
+        Application submission (including KFIs for equity release) is carried by
+        the same partner integrations and by OLP Connect. No public API.
+    issue:
+      exposed: false
+      access: none
+      note: >-
+        Policy issuance is internal. No public or documented issuance API; case
+        progress is surfaced to advisers via Origo Track My Apps and the
+        Existing Business Agent Hub, not via a published API.
+    fnol:
+      exposed: false
+      access: none
+      note: >-
+        No first-notice-of-loss / claims API surface of any kind is documented.
+        Life and protection claims are initiated by phone and form.
+  auth:
+    model: >-
+      No public API authentication scheme is documented. Adviser access to OLP
+      Connect and the Adviser Centre is username/password with optional Unipass
+      digital certificate (X.509 client certificate) association as a stronger
+      adviser identity. Partner API integrations are established bilaterally with
+      the platform vendor; their credentialing is not published.
+    schemes:
+    - type: Session login (username/password)
+      surface: adviser and customer portals
+      documented: true
+    - type: Unipass digital certificate (X.509 client certificate, Origo)
+      surface: adviser identity for OLP Connect / Adviser Centre
+      documented: true
+    - type: OAuth2 / OIDC
+      documented: false
+      note: No anonymous discovery document served at /.well-known on the primary host (HTTP 404).
+    - type: API key
+      documented: false
+      note: No public API key issuance exists.
+    - type: mTLS
+      documented: false
+      note: Bilateral partner transport is undisclosed; Unipass certificates are adviser identity, not a documented API transport.
+  webhooks:
+    present: false
+    asyncapi: false
+    note: >-
+      No event catalog, webhook documentation or AsyncAPI definition is
+      published. Adviser notifications are delivered as email alerts (lapse,
+      bounced payment, cancellation) from OLP Connect, not as subscribable
+      events. Absence is the finding.
+  postman:
+    present: false
+    note: No public Postman workspace or collection was found for Legal & General.
+  graphql:
+    present: false
+    note: No public /graphql surface was found; nothing to introspect.
+  grpc:
+    present: false
+    note: No published .proto files.
+  transports:
+  - protocol: REST
+    documented: false
+    note: >-
+      REST APIs demonstrably exist (partner integrations into Iress, Air
+      Sourcing, Advise Wise, Kensington) but no base URL, reference or schema is
+      published by Legal & General.
+  - protocol: GraphQL
+    documented: false
+  - protocol: gRPC
+    documented: false
+  - protocol: WebSocket
+    documented: false
+  - protocol: SSE
+    documented: false
+  - protocol: File/EDI
+    documented: false
+    note: >-
+      No ACORD AL3 or IVANS download surface. Origo message exchange for Letter
+      of Authority and application tracking is member-to-member, not public.
+sources:
+- url: https://www.legalandgeneral.com/
+  type: Website
+  status: 200
+  note: Primary site; no developer or API navigation anywhere.
+- url: https://www.legalandgeneral.com/adviser/
+  type: PartnerPortal
+  status: 200
+  note: >-
+    Adviser landing page behind Login/Register. Confirmed as a login wall, not a
+    developer portal. Only outbound platform link found was
+    https://fundcentres.lgim.com/uk/workplace-adviser/select-product/.
+- url: https://www.legalandgeneral.com/adviser/protection/services/registration-services/
+  type: Documentation
+  status: 200
+  note: >-
+    OLP Connect and Existing Business Agent Hub described in product terms —
+    quotes, applications, dynamic underwriting instant decisions, digital
+    Declaration of Health, trusts, direct debits, cancellations. Contains no API
+    documentation and no self-serve signup; onboarding via Business Development
+    Manager or agency.enquiries@landg.com.
+- url: https://group.legalandgeneral.com/newsroom/press-releases/2024/1/legal-general-home-finance-launches-api-link-with-iress-adviser-portal/
+  type: PressRelease
+  status: 200
+  note: >-
+    Legal & General Home Finance API link into Iress' "The Exchange" adviser
+    portal delivering "real time Equity Release Quotations, KFIs and
+    Applications". Partner-gated; no public developer access described.
+- url: https://group.legalandgeneral.com/en/newsroom/press-releases/legal-general-launches-seamless-api-link-on-air-sourcing-platform
+  type: PressRelease
+  note: Equivalent API link on the Air Sourcing platform for lifetime mortgages.
+- url: https://group.legalandgeneral.com/en/newsroom/press-releases/legal-general-home-finance-launches-api-integration-with-the-advise-wise-platform
+  type: PressRelease
+  note: Equivalent API integration with the Advise Wise platform.
+- url: https://group.legalandgeneral.com/en/newsroom/press-releases/legal-general-mortgage-club-launches-its-first-ever-api-integration-with-kensington-mortgages
+  type: PressRelease
+  note: Legal & General Mortgage Club's first API integration, with Kensington Mortgages.
+- url: https://group.legalandgeneral.com/en/newsroom/press-releases/legal-general-launches-track-my-apps-with-origo-a-unique-adviser-service
+  type: PressRelease
+  status: 200
+  note: Origo Track My Apps adviser case-tracking service — Origo rails, not a Legal & General API.
+- url: https://origo.com/unipass-services/unipass-letter-of-authority-provider-2
+  type: Standards
+  status: 200
+  note: >-
+    Origo Unipass Letter of Authority — Legal & General adopted it for workplace
+    pensions. Origo, not ACORD, is the standards seam in UK life and pensions.
+- url: https://github.com/Legal-and-General
+  type: GitHubOrganization
+  status: 200
+  note: >-
+    Verified via GitHub API. name "Legal & General", blog
+    https://www.legalandgeneral.com/, 3 public repos — canopy,
+    canopy-design-tokens, dependabot-batcher. Front-end design system only.
+- url: https://www.legalandgeneral.com/robots.txt
+  type: Robots
+  status: 200
+  note: No API, developer or spec paths disclosed.
+marketContext: >-
+  Home market United Kingdom. The FCA and PRA impose no open-insurance
+  obligation on UK carriers; the FCA's Open Finance work remains consultation,
+  not rule. The UK's only market-wide API and data infrastructure effort is the
+  London Market's Blueprint Two programme (PPL, Whitespace, Ki), and it is aimed
+  at brokers and syndicates rather than developers. Legal & General is a life,
+  health and pensions carrier, entirely outside that London Market subscription
+  seam, and its integration rails are Origo/Unipass. The result is exactly the
+  pattern this data set exists to measure: real APIs, real integrations, zero
+  public developer surface.
+actions:
+  openapiDirectoryCreated: false
+  apisYmlApisCount: 0
+  reason: >-
+    apis[] is intentionally EMPTY. No real, documented, publicly accessible
+    Legal & General API exists to list. Recording the partner-gated absence
+    accurately is the correct outcome for this carrier.

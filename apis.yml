@@ -1,0 +1,66 @@
+aid: legal-and-general
+url: https://raw.githubusercontent.com/api-evangelist/legal-and-general/refs/heads/main/apis.yml
+name: Legal & General
+kind: company
+description: >-
+  Legal & General Group plc is a FTSE 100 United Kingdom life insurer, retirement
+  and institutional asset manager headquartered in London and regulated by the
+  FCA and PRA. Its lines of business are life and protection insurance (term
+  life, critical illness, income protection), workplace and individual pensions,
+  annuities and bulk-purchase annuity/pension risk transfer, equity release
+  through Legal & General Home Finance, and asset management through Legal &
+  General Investment Management. It is a life and health carrier rather than a
+  general insurer, and it distributes almost entirely through regulated
+  intermediaries — financial advisers, mortgage brokers and employee-benefit
+  consultants — rather than direct-to-developer. Its API posture reflects that
+  distribution model honestly: Legal & General publishes NO public, self-serve
+  developer portal, no public API reference, and no downloadable OpenAPI or
+  Swagger definition. No developer.legalandgeneral.com, developers, docs, or
+  api subdomain resolves in DNS, and /developers, /api, /developer, /partners
+  and /integrations all return HTTP 404 on the primary site. Every documented
+  Legal & General API is a bilateral, partner-gated integration announced by the
+  counterparty rather than published by Legal & General — real-time equity
+  release quotation, KFI and application APIs wired into Iress "The Exchange",
+  Air Sourcing and the Advise Wise platform, a Mortgage Club integration with
+  Kensington Mortgages, and adviser-facing protection quote-and-apply through
+  OLP Connect. Adviser identity and messaging run on the UK's Origo rails —
+  Unipass digital certificates, Unipass Letter of Authority and Origo Track My
+  Apps — which is the UK life and pensions analogue of ACORD; no ACORD, AL3,
+  ACORD XML or NGDS reference appears anywhere in Legal & General's public
+  surface. The only public Legal & General code is a front-end design system
+  (Canopy) on GitHub, not an API. This record exists to measure that absence
+  accurately: a large carrier whose integration surface is entirely
+  intermediary-gated and invisible from outside a login wall.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- United Kingdom
+- Life Insurance
+- Health Insurance
+- Employee Benefits
+- Pensions
+- Annuities
+- Asset Management
+- Underwriting
+- Carrier
+- Broker
+- Partner Gated
+- No Public API
+created: '2026-07-25'
+modified: '2026-07-25'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.legalandgeneral.com/
+- type: CorporateWebsite
+  url: https://group.legalandgeneral.com/
+- type: GitHubOrganization
+  url: https://github.com/Legal-and-General
+- type: Blog
+  url: https://group.legalandgeneral.com/en/newsroom/press-releases
+- type: Login
+  url: https://www.legalandgeneral.com/log-in/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
