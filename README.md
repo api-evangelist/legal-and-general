@@ -43,6 +43,20 @@ No public API authentication scheme is documented. Adviser access uses session l
 
 None. No event catalog, no AsyncAPI, no public Postman workspace, no GraphQL surface, no published `.proto`. Absence is the finding.
 
+## What Legal & General *does* publish (enrichment round 2026-07-25)
+
+Legal & General is closed on the API and unusually open on the front end. Its [Canopy design system](https://github.com/Legal-and-General/canopy) is a genuine, actively released open-source project — and it is **agent-native**:
+
+- **84 installable agent skills** — 69 component best-practice skills and 15 per-major-version migration skills, MIT licensed, installed with `npx skills add Legal-and-General/canopy`, compatible with GitHub Copilot, Claude Code, Cursor and 40+ other agents. See [`skills/_index.yml`](skills/_index.yml) and the [published catalog](https://github.com/Legal-and-General/canopy/blob/master/docs/COPILOT_SKILLS.md).
+- **Four Copilot coding agents** in `.github/agents/` (Dependency Updater, Migration Guide Writer, Migration Skill Generator, Best Practice Skill Generator) — documented in [`docs/AGENTIC_AI.md`](https://github.com/Legal-and-General/canopy/blob/master/docs/AGENTIC_AI.md).
+- **Dated release history** — semver via semantic-release, currently **v37.0.0 (2026-07-23)**, 20 releases between 2026-06-30 and 2026-07-23.
+- **A published breaking-change policy** ([`docs/BREAKING_CHANGES.md`](https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md)) and a **repository security policy** ([`docs/SECURITY.md`](https://github.com/Legal-and-General/canopy/blob/master/docs/SECURITY.md)) — the only vulnerability-reporting route Legal & General publishes anywhere.
+- **`@legal-and-general/canopy`** ships through **GitHub Packages**, not public npm, so even the design system needs an authenticated token. No package exists on npm, PyPI, Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist or crates.io.
+
+Two previously unrecorded API hosts were found in DNS this round, and both confirm the partner-gated pattern rather than contradicting it: **`api.landg.com`** resolves but has TCP/443 filtered (no TLS handshake completes), and **`sandbox.legalandgeneral.com`** resolves to CloudFront and returns HTTP 403 on every path. Neither is a public sandbox or a developer portal.
+
+There is still **no corporate security.txt, no bug bounty, no trust centre, no named certification, no status page and no `/.well-known/` document on any host** — 25 well-known probes across five hosts, all 404.
+
 ## Tags
 
 - Insurance

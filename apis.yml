@@ -27,9 +27,14 @@ description: >-
   Unipass digital certificates, Unipass Letter of Authority and Origo Track My
   Apps — which is the UK life and pensions analogue of ACORD; no ACORD, AL3,
   ACORD XML or NGDS reference appears anywhere in Legal & General's public
-  surface. The only public Legal & General code is a front-end design system
-  (Canopy) on GitHub, not an API. This record exists to measure that absence
-  accurately: a large carrier whose integration surface is entirely
+  surface. The only public Legal & General code is the Canopy design system on
+  GitHub — an Apache-2.0 Angular component library shipped through GitHub
+  Packages, with dated semver release notes, a published breaking-change policy,
+  a repository security policy, and 84 installable agent skills (69 component
+  best-practice skills and 15 per-major migration skills) that work with GitHub
+  Copilot, Claude Code and Cursor. That makes Legal & General agent-native on the
+  front end and completely closed on the API. This record exists to measure that
+  split accurately: a large carrier whose integration surface is entirely
   intermediary-gated and invisible from outside a login wall.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
@@ -46,21 +51,62 @@ tags:
 - Broker
 - Partner Gated
 - No Public API
+- Design System
+- Agent Skills
+- Open Source
 created: '2026-07-25'
 modified: '2026-07-25'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/legal-and-general-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/legal-and-general-vulnerability-disclosure.yml
+- type: Security
+  name: Canopy security policy (only published reporting route)
+  url: https://github.com/Legal-and-General/canopy/blob/master/docs/SECURITY.md
+- type: AgentSkill
+  name: Canopy agent skills (84 published)
+  url: skills/_index.yml
+- type: Packages
+  url: packages/legal-and-general-packages.yml
+- type: Components
+  url: components/legal-and-general-components.yml
+- type: ChangeLog
+  url: changelog/legal-and-general-changelog.yml
+- type: Lifecycle
+  url: lifecycle/legal-and-general-lifecycle.yml
+- type: Deprecation
+  name: Canopy breaking-change policy
+  url: https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md
+- type: Conformance
+  url: conformance/legal-and-general-conformance.yml
+- type: LLMsTxt
+  url: llms/legal-and-general-llms.txt
 - type: Website
   url: https://www.legalandgeneral.com/
 - type: CorporateWebsite
   url: https://group.legalandgeneral.com/
 - type: GitHubOrganization
   url: https://github.com/Legal-and-General
+- type: SourceCode
+  name: Canopy design system
+  url: https://github.com/Legal-and-General/canopy
 - type: Blog
   url: https://group.legalandgeneral.com/en/newsroom/press-releases
 - type: Login
   url: https://www.legalandgeneral.com/log-in/
+- type: Support
+  url: https://www.legalandgeneral.com/contact-us/
+- type: HelpCenter
+  url: https://www.legalandgeneral.com/help/
+- type: PrivacyPolicy
+  url: https://www.legalandgeneral.com/privacy-notice/
+- type: TermsOfService
+  url: https://www.legalandgeneral.com/legal-information/
+- type: Accessibility
+  url: https://www.legalandgeneral.com/accessibility/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

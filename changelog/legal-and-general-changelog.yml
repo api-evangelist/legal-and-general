@@ -1,0 +1,91 @@
+generated: '2026-07-25'
+method: searched
+source: https://github.com/Legal-and-General/canopy/releases
+scope: >-
+  Legal & General publishes no API changelog, because it publishes no public
+  API. The only dated, machine-readable release history it publishes is for the
+  Canopy design system on GitHub Releases. Recorded here with that scope stated
+  explicitly.
+subject: '@legal-and-general/canopy (design system)'
+url: https://github.com/Legal-and-General/canopy/releases
+feed: https://github.com/Legal-and-General/canopy/releases.atom
+scheme: semver
+automation: semantic-release (conventional commits drive version + release notes)
+breaking_change_policy: https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md
+maintenance_policy: https://github.com/Legal-and-General/canopy/blob/master/docs/MAINTENANCE_RELEASES.md
+current_version: v37.0.0
+current_version_date: '2026-07-23'
+cadence: >-
+  High — 20 releases published between 2026-06-30 and 2026-07-23, including 5
+  major (breaking) releases. Major versions ship with release notes that list
+  every breaking change plus an installable migration skill.
+entries:
+- version: v37.0.0
+  date: '2026-07-23'
+  breaking: true
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v37.0.0
+  highlights: >-
+    list component rewritten — LgListWithExpressiveStylingDirective and the
+    lg-expressive-list class removed; LgListWithIconsComponent variant input
+    replaced by size; ListWithIconsVariant type removed; iconColour input
+    replaced by variant.
+  migration_skill: canopy-v37-migration
+- version: v36.0.1
+  date: '2026-07-23'
+  breaking: false
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v36.0.1
+- version: v36.0.0
+  date: '2026-07-22'
+  breaking: true
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v36.0.0
+  migration_skill: canopy-v36-migration
+- version: v35.1.0
+  date: '2026-07-21'
+  breaking: false
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v35.1.0
+- version: v35.0.0
+  date: '2026-07-20'
+  breaking: true
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v35.0.0
+  migration_skill: canopy-v35-migration
+- version: v34.4.1
+  date: '2026-07-20'
+  breaking: false
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v34.4.1
+- version: v34.4.0
+  date: '2026-07-16'
+  breaking: false
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v34.4.0
+- version: v34.3.0
+  date: '2026-07-13'
+  breaking: false
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v34.3.0
+- version: v34.2.0
+  date: '2026-07-13'
+  breaking: false
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v34.2.0
+- version: v34.1.0
+  date: '2026-07-01'
+  breaking: false
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v34.1.0
+- version: v34.0.0
+  date: '2026-07-01'
+  breaking: true
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v34.0.0
+  migration_skill: canopy-v34-migration
+- version: v33.0.0
+  date: '2026-06-30'
+  breaking: true
+  url: https://github.com/Legal-and-General/canopy/releases/tag/v33.0.0
+  migration_skill: canopy-v33-migration
+maintenance_releases:
+  note: >-
+    Backported patch releases were published on 2026-07-20 across the v26-v33
+    lines (v26.0.4, v27.1.4, v28.1.4, v29.1.4, v30.1.2, v31.0.2, v32.0.2,
+    v33.0.1), following the maintenance-branch process in
+    docs/MAINTENANCE_RELEASES.md.
+api_changelog:
+  present: false
+  note: >-
+    No changelog, release notes or version history is published for any Legal &
+    General business API. Partner integrations are versioned bilaterally.

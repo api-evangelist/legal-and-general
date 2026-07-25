@@ -1,0 +1,81 @@
+generated: '2026-07-25'
+method: searched
+source: https://github.com/Legal-and-General/canopy
+scope: >-
+  Client-side UI component library published by Legal & General. This is a
+  design system for building Legal & General web applications, not an embedded
+  API surface (there are no hosted checkout/dashboard widgets, because Legal &
+  General exposes no public API).
+families:
+- name: Canopy
+  kind: design-system
+  technology: Angular (currently supports Angular 21.x)
+  package: '@legal-and-general/canopy'
+  registry: https://npm.pkg.github.com/
+  repo: https://github.com/Legal-and-General/canopy
+  storybook: https://legal-and-general.github.io/canopy/?path=/docs/welcome--docs
+  license: Apache-2.0
+  contact: CanopyDesignSystem@landg.com
+  current_version: v37.0.0
+  status: active — undergoing L&G brand modernisation through 2025-2026
+  loader: 'npm install @legal-and-general/canopy (GitHub Packages, authenticated)'
+  documentation:
+  - name: Usage
+    url: https://github.com/Legal-and-General/canopy/blob/master/docs/USAGE.md
+  - name: Best practice
+    url: https://github.com/Legal-and-General/canopy/blob/master/docs/BEST_PRACTICE.md
+  - name: Contributing
+    url: https://github.com/Legal-and-General/canopy/blob/master/docs/CONTRIBUTING.md
+  - name: Storybook component explorer
+    url: https://legal-and-general.github.io/canopy/?path=/docs/welcome--docs
+  groups:
+  - group: Foundations
+    components: [colour, colour directive, typography, design tokens, layout grid and spacing,
+      heading, separator, spacing margin, spacing padding, spacing row gap]
+  - group: Layout
+    components: [page, grid, content area, header, footer, hero, hero image]
+  - group: Actions
+    components: [button, button group, button toggle, filter container]
+  - group: Feedback
+    components: [alert, banner, spinner, skeleton, progress indicator, screen-reader alert message,
+      primary message]
+  - group: Data display
+    components: [data point, accordion, details, table, list, card, promo card]
+  - group: Navigation
+    components: [breadcrumb, tabs, pagination, link menu, side nav]
+  - group: Forms
+    components: [input field, select field, date field, sort code, validation, radio group,
+      segment, checkbox toggle, filter buttons]
+  - group: Utilities
+    components: [pictogram, flag icon, icon, focus directive, show-at, hide-at, orientation,
+      feature toggle, camel-case pipe, kebab-case pipe]
+  - group: Styles
+    components: [link styles, utility classes, SCSS mixins]
+  deprecated_or_removed:
+  - component: LgCarouselComponent
+    status: deprecated
+  - component: LgBrandIconComponent
+    status: removed
+  - component: lg-switch / variant="switch"
+    status: removed
+  - component: lg-quick-action
+    status: removed
+  - component: LgShadowDirective
+    status: removed in v30
+  agent_support: >-
+    Each component family has a matching installable agent skill under
+    skills/best-practice/ in the Canopy repo — see skills/_index.yml.
+- name: Canopy Design Tokens
+  kind: design-tokens
+  repo: https://github.com/Legal-and-General/canopy-design-tokens
+  package: '@legal-and-general/canopy-design-tokens'
+  technology: Style Dictionary, generated from Figma
+  outputs: [css, typescript]
+  license: not declared
+embedded_api_widgets: []
+notes:
+- >-
+  No hosted or embeddable Legal & General product widget (quote form, application
+  journey, payment element) is published for third-party sites. Adviser-facing
+  quote-and-apply runs inside OLP Connect and partner adviser platforms behind a
+  login wall.

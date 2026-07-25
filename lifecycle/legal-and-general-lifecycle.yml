@@ -1,0 +1,78 @@
+generated: '2026-07-25'
+method: searched
+source: https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md
+scope: >-
+  Two distinct lifecycles are recorded. (1) The Legal & General BUSINESS API
+  lifecycle — which does not exist publicly: no versioning policy, no
+  deprecation policy, no SLA and no status page are published for any Legal &
+  General API. (2) The Canopy design system lifecycle — which IS published, in
+  detail, on GitHub. The pointers on this artifact refer to the published
+  Canopy policy; the API row below records the absence.
+api_lifecycle:
+  published: false
+  versioning: null
+  deprecation_policy: null
+  sunset_header: unknown
+  sla: null
+  status_page: null
+  note: >-
+    Legal & General publishes no developer portal, no API reference and no
+    machine-readable spec, so there is no API versioning, deprecation or
+    availability commitment to record. Partner integrations (Iress "The
+    Exchange", Air Sourcing, Advise Wise, Kensington Mortgages, OLP Connect)
+    are governed by bilateral contract, not a published lifecycle policy.
+product_lifecycle:
+  subject: '@legal-and-general/canopy (design system)'
+  versioning:
+    scheme: semver
+    automation: semantic-release
+    current: v37.0.0
+    current_date: '2026-07-23'
+    docs: https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md
+  deprecation:
+    policy_url: https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md
+    verbatim_copy: lifecycle/legal-and-general-canopy-breaking-changes.md
+    mechanism: >-
+      Breaking changes are only shipped in a major version and are enumerated in
+      that release's notes. Every major release ships with an installable agent
+      migration skill (canopy-vNN-migration) that walks a coding agent through
+      the upgrade.
+    in_scope:
+    - component API (inputs/outputs/selectors)
+    - CSS variables, SCSS mixins and utility classes
+    release_notes: https://github.com/Legal-and-General/canopy/releases
+    sunset_header: not applicable (library, not a hosted service)
+  support:
+    model: >-
+      Long-term support only on the mainline branch. Security patches are fixed
+      forward and require consumers to move to the latest version; patch releases
+      for older lines are possible in extenuating circumstances by request.
+    maintenance_branches: https://github.com/Legal-and-General/canopy/blob/master/docs/MAINTENANCE_RELEASES.md
+    policy_url: https://github.com/Legal-and-General/canopy/blob/master/docs/SECURITY.md
+    contact: CanopyDesignSystem@landg.com
+  deprecated_surface:
+  - item: LgCarouselComponent
+    state: deprecated
+  - item: LgBrandIconComponent
+    state: removed
+  - item: lg-switch / lg-toggle variant="switch"
+    state: removed
+  - item: lg-quick-action
+    state: removed
+  - item: LgShadowDirective
+    state: removed in v30
+  - item: LgListWithExpressiveStylingDirective / lg-expressive-list
+    state: removed in v37
+  brand_modernisation: >-
+    The repository carries a standing notice that Canopy is undergoing major
+    change for L&G's brand modernisation across 2025-2026.
+status_page:
+  present: false
+  probes:
+  - url: https://status.legalandgeneral.com
+    status: 000
+    note: no DNS record
+  - url: https://www.legalandgeneral.com/service-status/
+    status: 404
+  - url: https://www.legalandgeneral.com/status/
+    status: 404

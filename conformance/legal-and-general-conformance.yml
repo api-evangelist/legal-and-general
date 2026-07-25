@@ -1,0 +1,102 @@
+generated: '2026-07-25'
+method: searched
+source: >-
+  live probes plus Legal & General published pages (accessibility statement,
+  legal information, security page) and the Canopy repository documentation
+scope: >-
+  Standards posture for a provider with no public API. Most API-side standards
+  are recorded as conforms:false because there is no machine-readable contract
+  to conform WITH — that is a measurement of absence, not a failure grade. The
+  standards Legal & General genuinely does participate in are UK life-and-pensions
+  messaging (Origo/Unipass), accessibility (WCAG), and semantic versioning for
+  its published design system.
+standards:
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI or Swagger document is served on any Legal & General host. Probed
+    /openapi.json, /openapi.yaml, /swagger.json, /api-docs, /docs, /redoc across
+    www., group., am.landg.com, sandbox.legalandgeneral.com, api.landg.com and
+    api.lgamerica.com — all 404, 403 or connection timeout.
+- id: asyncapi
+  conforms: false
+  evidence: no event, streaming or webhook surface is documented
+- id: graphql
+  conforms: false
+  evidence: no /graphql endpoint found (www /graphql returns 404); nothing to introspect
+- id: grpc
+  conforms: false
+  evidence: no published .proto in the GitHub organisation or on buf.build
+- id: mcp
+  conforms: false
+  evidence: no hosted MCP server; no OpenAPI to derive candidate tools from
+- id: oauth2
+  conforms: false
+  evidence: >-
+    /.well-known/oauth-authorization-server returns 404 on every host; no public
+    OAuth client registration or token endpoint is documented
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on every host
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on every host
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no API contract published, so no error format can be asserted
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: no deprecation or sunset signalling is documented for any API
+- id: acord
+  conforms: false
+  evidence: >-
+    No occurrence of ACORD, AL3, ACORD XML, ACORD certified or NGDS anywhere in
+    Legal & General's public surface. Expected: ACORD AL3/IVANS is a US property
+    and casualty rail, and Legal & General is a UK life, health and pensions
+    carrier.
+- id: origo-unipass
+  conforms: true
+  evidence: >-
+    Legal & General adopted Origo's Unipass Letter of Authority for its workplace
+    pensions business, accepts Unipass X.509 digital certificates as adviser
+    identity for OLP Connect and the Adviser Centre, and launched Origo Track My
+    Apps for adviser case tracking. Origo is the UK life-and-pensions analogue of
+    ACORD.
+  source: https://origo.com/unipass-services/unipass-letter-of-authority-provider-2
+- id: wcag-2.1-aa
+  conforms: partial
+  evidence: >-
+    Published accessibility statement: "We are building our content to meet the
+    requirements of Web Content Accessibility Guidelines version 2.1 AA
+    Standard." It is a stated commitment with known outstanding issues, not a
+    full conformance claim. Feedback route vulnerable.customers@landg.com.
+  source: https://www.legalandgeneral.com/accessibility/
+- id: semver
+  conforms: true
+  evidence: >-
+    The Canopy design system uses semantic versioning via semantic-release, with
+    breaking changes confined to major versions and enumerated in release notes.
+  source: https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md
+- id: github-copilot-agent-skills
+  conforms: true
+  evidence: >-
+    84 installable agent skills (69 best-practice + 15 migration) published as
+    SKILL.md files with the standard frontmatter contract, installable through
+    the skills CLI and compatible with Copilot, Claude Code and Cursor.
+  source: https://github.com/Legal-and-General/canopy/blob/master/docs/COPILOT_SKILLS.md
+regulatory:
+  note: >-
+    Legal & General is authorised by the Prudential Regulation Authority and
+    regulated by the Financial Conduct Authority and the PRA. That is a
+    prudential/conduct authorisation, not a published security or privacy
+    certification programme.
+  regulators: [FCA, PRA]
+  jurisdiction: United Kingdom
+  source: https://www.legalandgeneral.com/legal-information/
+certifications_published:
+  found: false
+  checked: [SOC 2, ISO 27001, ISO 27017, ISO 27018, PCI DSS, HIPAA, FedRAMP, Cyber Essentials, CSA STAR]
+  note: >-
+    No trust centre, compliance page or certification listing was found on any
+    Legal & General host. The customer-facing /security/ page names no
+    certifications. No Compliance or TrustCenter pointer is emitted.

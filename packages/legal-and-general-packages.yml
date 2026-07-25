@@ -1,0 +1,94 @@
+generated: '2026-07-25'
+method: searched
+source: https://github.com/Legal-and-General
+scope: >-
+  Legal & General publishes NO API client libraries. It publishes no public API,
+  so there is nothing for an SDK to wrap. The first-party packages below are
+  front-end / developer-tooling packages from the Legal & General GitHub
+  organisation. They are recorded as Packages; deliberately NOT wired as SDKs,
+  because none of them is an API client library.
+registries_probed:
+- registry: npm (registry.npmjs.org)
+  result: no first-party Legal & General package published
+  probes:
+  - name: '@legal-and-general/canopy'
+    status: 404
+  - name: '@legal-and-general/canopy-design-tokens'
+    status: 404
+  - name: '@legal-and-general/dependabot-batcher'
+    status: 404
+- registry: PyPI
+  result: none found
+- registry: Maven Central
+  result: none found
+- registry: NuGet
+  result: none found
+- registry: pkg.go.dev
+  result: none found
+- registry: RubyGems
+  result: none found
+- registry: Packagist
+  result: none found
+- registry: crates.io
+  result: none found
+packages:
+- language: typescript
+  registry: github-packages
+  name: '@legal-and-general/canopy'
+  url: https://github.com/Legal-and-General/canopy
+  registry_url: https://npm.pkg.github.com/
+  install: npm install @legal-and-general/canopy
+  setup: |
+    Add to the project .npmrc:
+      @legal-and-general:registry=https://npm.pkg.github.com/
+    Authenticate to GitHub Packages with a personal access token carrying
+    read:packages before installing.
+  docs: https://github.com/Legal-and-General/canopy/blob/master/docs/USAGE.md
+  license: Apache-2.0
+  official: true
+  kind: design-system
+  api_client: false
+  description: >-
+    Canopy — the Legal & General design system implemented in Angular. UI
+    components, directives, pipes, icons, pictograms and SCSS foundations.
+    Requires @angular/common and @angular/core (Canopy currently supports
+    Angular 21.x). Published to the GitHub package registry, not public npm,
+    so installation requires an authenticated GitHub token.
+  current_version: v37.0.0
+  released: '2026-07-23'
+- language: typescript
+  registry: github-source
+  name: '@legal-and-general/canopy-design-tokens'
+  url: https://github.com/Legal-and-General/canopy-design-tokens
+  install: not published to a public registry; consumed from source
+  license: not declared in package.json
+  official: true
+  kind: design-tokens
+  api_client: false
+  description: >-
+    Design tokens for the Canopy design system, generated from Figma with Style
+    Dictionary. Emits CSS and TypeScript token files.
+- language: typescript
+  registry: github-marketplace
+  name: dependabot-batcher
+  url: https://github.com/Legal-and-General/dependabot-batcher
+  marketplace: https://github.com/marketplace/actions/dependabot-batcher
+  install: 'uses: Legal-and-General/dependabot-batcher@v1'
+  license: Apache-2.0
+  official: true
+  kind: github-action
+  api_client: false
+  description: >-
+    A GitHub Action that combines open Dependabot pull requests into a single
+    batched PR to reduce maintenance overhead and GitHub Actions minutes.
+sdk_count: 0
+notes:
+- >-
+  No Legal & General API SDK exists in any public registry. Legal & General's
+  real integrations (equity release quotation/KFI/application into Iress "The
+  Exchange", Air Sourcing and Advise Wise; the Mortgage Club link with
+  Kensington Mortgages; protection quote-and-apply via OLP Connect) are
+  bilateral and partner-gated, with no published client library.
+- >-
+  Canopy is distributed via GitHub Packages rather than public npm, which means
+  even the design system requires an authenticated GitHub token to install.

@@ -1,0 +1,722 @@
+generated: '2026-07-25'
+method: searched
+source: https://github.com/Legal-and-General/canopy/blob/master/docs/COPILOT_SKILLS.md
+scope: Agent Skills published by Legal & General for the Canopy design system (Angular UI component library),
+  NOT for any Legal & General business API. Legal & General publishes no public API, so these are the
+  provider's only agent-facing developer artifacts.
+publisher:
+  org: Legal & General
+  github_org: https://github.com/Legal-and-General
+  repo: https://github.com/Legal-and-General/canopy
+  contact: CanopyDesignSystem@landg.com
+  license: MIT (skills) / Apache-2.0 (Canopy library)
+format:
+  spec: 'GitHub Copilot agent skills (SKILL.md with YAML frontmatter: name, description, license, metadata)'
+  docs: https://docs.github.com/en/copilot/concepts/agents/about-agent-skills
+  installer: https://www.npmjs.com/package/skills
+  compatible_agents:
+  - GitHub Copilot
+  - Claude Code
+  - Cursor
+  - 40+ agents supported by the skills CLI
+  pinning_note: Best practice skills must be installed pinned to the git tag matching the Canopy version
+    in package.json (available from v24.0.0 onwards).
+agents:
+- name: Dependency Updater
+  file: .github/agents/dependency-updater.agent.md
+  purpose: Manages npm dependency updates including breaking-change research and PR creation.
+- name: Migration Guide Writer
+  file: .github/agents/migration-guide-writer.agent.md
+  purpose: Generates a migration guide comment on a PR by analysing the diff and build output.
+- name: Migration Skill Generator
+  file: .github/agents/migration-skill-generator.agent.md
+  purpose: Generates an installable Copilot skill for a published major release.
+- name: Best Practice Skill Generator
+  file: .github/agents/best-practice-skill-generator.agent.md
+  purpose: Generates best-practice skills for Canopy components from guide.mdx, stories and docs images.
+saved_verbatim:
+- skills/legal-and-general-canopy-copilot-skills.md
+- skills/legal-and-general-canopy-agentic-ai.md
+- skills/legal-and-general-canopy-button.md
+- skills/legal-and-general-canopy-accessibility.md
+- skills/legal-and-general-canopy-forms-validation.md
+- skills/legal-and-general-canopy-v37-migration.md
+counts:
+  total: 84
+  best_practice: 69
+  migration: 15
+skills:
+- name: canopy-accessibility
+  kind: best-practice
+  file: skills/best-practice/accessibility/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/accessibility/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/accessibility/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-accessibility
+  category: Principles
+  covers: lang attribute, skip link, alt text, form a11y, ARIA, landmarks
+- name: canopy-accordion
+  kind: best-practice
+  file: skills/best-practice/accordion/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/accordion/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/accordion/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-accordion
+  category: Data Display
+  covers: '`LgAccordionComponent`, multi, lazy content, outputs'
+- name: canopy-alert
+  kind: best-practice
+  file: skills/best-practice/alert/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/alert/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/alert/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-alert
+  category: Feedback
+  covers: '`LgAlertComponent`, variants, icon usage, dos and don''ts'
+- name: canopy-banner
+  kind: best-practice
+  file: skills/best-practice/banner/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/banner/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/banner/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-banner
+  category: Feedback
+  covers: '`LgBannerComponent`, variants, dismissal, dos and don''ts'
+- name: canopy-brand-icon
+  kind: best-practice
+  file: skills/best-practice/brand-icon/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/brand-icon/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/brand-icon/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-brand-icon
+  category: Deprecated/Removed
+  covers: Removal notice for `LgBrandIconComponent`
+  status: Removed
+- name: canopy-breadcrumb
+  kind: best-practice
+  file: skills/best-practice/breadcrumb/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/breadcrumb/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/breadcrumb/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-breadcrumb
+  category: Navigation
+  covers: '`LgBreadcrumbComponent`, current page, ellipsis, variants'
+- name: canopy-button
+  kind: best-practice
+  file: skills/best-practice/button/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/button/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/button/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-button
+  category: Actions
+  covers: Button variants, priorities, sizes, icon usage, dos and don'ts
+- name: canopy-card
+  kind: best-practice
+  file: skills/best-practice/card/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/card/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/card/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-card
+  category: Data Display
+  covers: '`LgCardComponent`, templates, navigation card, card group'
+- name: canopy-carousel
+  kind: best-practice
+  file: skills/best-practice/carousel/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/carousel/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/carousel/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-carousel
+  category: Deprecated/Removed
+  covers: Deprecation notice for `LgCarouselComponent`
+  status: Deprecated
+- name: canopy-colour-directive
+  kind: best-practice
+  file: skills/best-practice/colour-directive/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/colour-directive/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/colour-directive/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-colour-directive
+  category: Foundations
+  covers: '`lgColour` directive, applying colour modes and themes to components'
+- name: canopy-colour-foundation
+  kind: best-practice
+  file: skills/best-practice/colour-foundation/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/colour-foundation/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/colour-foundation/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-colour-foundation
+  category: Foundations
+  covers: Colour palette, design tokens, modes, tones, accessibility principles
+- name: canopy-colour
+  kind: best-practice
+  file: skills/best-practice/colour/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/colour/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/colour/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-colour
+- name: canopy-content-area
+  kind: best-practice
+  file: skills/best-practice/content-area/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/content-area/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/content-area/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-content-area
+  category: Layout
+  covers: '`LgContentAreaComponent`, variants, heading level, nesting rules'
+- name: canopy-data-point
+  kind: best-practice
+  file: skills/best-practice/data-point/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/data-point/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/data-point/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-data-point
+  category: Data Display
+  covers: '`LgDataPointComponent`, label/value/list, heading level'
+- name: canopy-design-tokens
+  kind: best-practice
+  file: skills/best-practice/design-tokens/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/design-tokens/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/design-tokens/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-design-tokens
+  category: Foundations
+  covers: Token tiers, semantic vs component tokens, usage priority
+- name: canopy-details
+  kind: best-practice
+  file: skills/best-practice/details/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/details/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/details/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-details
+  category: Data Display
+  covers: '`LgDetailsComponent`, status, role="alert" variants, outputs'
+- name: canopy-feature-toggle
+  kind: best-practice
+  file: skills/best-practice/feature-toggle/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/feature-toggle/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/feature-toggle/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-feature-toggle
+  category: Utilities
+  covers: '`LgFeatureToggleModule`, directive, route guard'
+- name: canopy-filter-container
+  kind: best-practice
+  file: skills/best-practice/filter-container/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/filter-container/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/filter-container/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-filter-container
+  category: Actions
+  covers: '`LgFilterContainerComponent`, filter button group pattern'
+- name: canopy-flag-icon
+  kind: best-practice
+  file: skills/best-practice/flag-icon/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/flag-icon/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/flag-icon/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-flag-icon
+  category: Utilities
+  covers: '`LgFlagIconComponent`, country flags, usage with country names'
+- name: canopy-focus
+  kind: best-practice
+  file: skills/best-practice/focus/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/focus/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/focus/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-focus
+  category: Utilities
+  covers: '`LgFocusDirective`, programmatic focus'
+- name: canopy-footer
+  kind: best-practice
+  file: skills/best-practice/footer/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/footer/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/footer/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-footer
+  category: Layout
+  covers: '`lg-footer`, nav variants, logo, `rel="noopener"`'
+- name: canopy-forms-checkbox
+  kind: best-practice
+  file: skills/best-practice/forms-checkbox/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-checkbox/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-checkbox/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-checkbox
+  category: Forms
+  covers: '`LgToggleComponent` (checkbox), group, size, inline'
+- name: canopy-forms-date
+  kind: best-practice
+  file: skills/best-practice/forms-date/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-date/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-date/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-date
+  category: Forms
+  covers: '`LgDateFieldComponent`, ISO 8601 output, validation priority'
+- name: canopy-forms-filter-buttons
+  kind: best-practice
+  file: skills/best-practice/forms-filter-buttons/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-filter-buttons/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-filter-buttons/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-filter-buttons
+  category: Forms
+  covers: Filter radio/checkbox, max 10 options, default deselected
+- name: canopy-forms-input
+  kind: best-practice
+  file: skills/best-practice/forms-input/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-input/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-input/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-input
+  category: Forms
+  covers: '`LgInputFieldComponent`, prefix/suffix, block, showLabel'
+- name: canopy-forms-radio
+  kind: best-practice
+  file: skills/best-practice/forms-radio/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-radio/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-radio/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-radio
+  category: Forms
+  covers: '`LgRadioGroupComponent`, inline, value, max 5 options'
+- name: canopy-forms-segment
+  kind: best-practice
+  file: skills/best-practice/forms-segment/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-segment/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-segment/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-segment
+  category: Forms
+  covers: Segment group/button, stack input, 2–5 buttons
+- name: canopy-forms-select
+  kind: best-practice
+  file: skills/best-practice/forms-select/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-select/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-select/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-select
+  category: Forms
+  covers: '`LgSelectFieldComponent`, when to use vs other controls'
+- name: canopy-forms-sort-code
+  kind: best-practice
+  file: skills/best-practice/forms-sort-code/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-sort-code/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-sort-code/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-sort-code
+  category: Forms
+  covers: '`lgSortCode` directive, auto-format, hint text requirement'
+- name: canopy-forms-switch
+  kind: best-practice
+  file: skills/best-practice/forms-switch/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-switch/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-switch/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-switch
+  category: Deprecated/Removed
+  covers: '`LgToggleComponent` (switch), deprecation/removal migration guidance'
+  status: Deprecated/Removed
+- name: canopy-forms-validation
+  kind: best-practice
+  file: skills/best-practice/forms-validation/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/forms-validation/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/forms-validation/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-forms-validation
+  category: Forms
+  covers: '`LgValidationComponent`, error state matcher, dynamic rules'
+- name: canopy-grid
+  kind: best-practice
+  file: skills/best-practice/grid/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/grid/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/grid/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-grid
+  category: Layout
+  covers: '`lgContainer`, `lgRow`, `lgCol`, responsive columns, offsets'
+- name: canopy-header
+  kind: best-practice
+  file: skills/best-practice/header/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/header/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/header/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-header
+  category: Layout
+  covers: '`lg-header`, logo, primary nav, account menu, co-branding'
+- name: canopy-heading
+  kind: best-practice
+  file: skills/best-practice/heading/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/heading/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/heading/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-heading
+  category: Foundations
+  covers: '`LgHeadingComponent`, heading levels, usage restrictions'
+- name: canopy-hero-img
+  kind: best-practice
+  file: skills/best-practice/hero-img/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/hero-img/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/hero-img/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-hero-img
+  category: Layout
+  covers: '`LgHeroImgComponent`, imageUrl, overlap, grid requirements'
+- name: canopy-hero
+  kind: best-practice
+  file: skills/best-practice/hero/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/hero/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/hero/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-hero
+  category: Layout
+  covers: '`LgHeroComponent`, overlap, breadcrumb light variant'
+- name: canopy-hide-at
+  kind: best-practice
+  file: skills/best-practice/hide-at/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/hide-at/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/hide-at/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-hide-at
+  category: Utilities
+  covers: '`LgHideAtDirective`, breakpoint-based hiding'
+- name: canopy-icon
+  kind: best-practice
+  file: skills/best-practice/icon/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/icon/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/icon/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-icon
+  category: Utilities
+  covers: '`LgIconComponent`, sizing, colour, aria-hidden'
+- name: canopy-layout-grid-and-spacing
+  kind: best-practice
+  file: skills/best-practice/layout-grid-and-spacing/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/layout-grid-and-spacing/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/layout-grid-and-spacing/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-layout-grid-and-spacing
+  category: Foundations
+  covers: Breakpoints, responsive grid, spacing variables
+- name: canopy-link-menu
+  kind: best-practice
+  file: skills/best-practice/link-menu/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/link-menu/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/link-menu/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-link-menu
+  category: Navigation
+  covers: '`LgLinkMenuComponent`, item text, right icon behaviour'
+- name: canopy-link
+  kind: best-practice
+  file: skills/best-practice/link/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/link/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/link/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-link
+  category: Styles
+  covers: Anchor styles, external links, icons in links, colour modes
+- name: canopy-list
+  kind: best-practice
+  file: skills/best-practice/list/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/list/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/list/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-list
+  category: Data Display
+  covers: '`LgListWithIconsComponent`, icon colour, expressive styling'
+- name: canopy-mixins
+  kind: best-practice
+  file: skills/best-practice/mixins/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/mixins/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/mixins/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-mixins
+  category: Styles
+  covers: '`lg-breakpoint`, `lg-font-size`, `lg-focus-outline`, `lg-link`, `lg-status`, and other SCSS
+    mixins'
+- name: canopy-modal
+  kind: best-practice
+  file: skills/best-practice/modal/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/modal/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/modal/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-modal
+- name: canopy-orientation
+  kind: best-practice
+  file: skills/best-practice/orientation/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/orientation/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/orientation/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-orientation
+  category: Utilities
+  covers: '`LgOrientationDirective`, responsive vertical/horizontal layout'
+- name: canopy-page
+  kind: best-practice
+  file: skills/best-practice/page/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/page/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/page/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-page
+  category: Layout
+  covers: '`LgPageComponent`, skip link, slot projection'
+- name: canopy-pagination
+  kind: best-practice
+  file: skills/best-practice/pagination/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/pagination/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/pagination/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-pagination
+  category: Navigation
+  covers: '`LgPaginationComponent`, totalItems, currentPage, PageData'
+- name: canopy-pictogram
+  kind: best-practice
+  file: skills/best-practice/pictogram/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/pictogram/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/pictogram/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-pictogram
+  category: Utilities
+  covers: '`LgPictogramComponent`, sizes, colour inputs, global branding'
+- name: canopy-pipes-camel-case
+  kind: best-practice
+  file: skills/best-practice/pipes-camel-case/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/pipes-camel-case/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/pipes-camel-case/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-pipes-camel-case
+  category: Utilities
+  covers: '`LgCamelCasePipe`'
+- name: canopy-pipes-kebab-case
+  kind: best-practice
+  file: skills/best-practice/pipes-kebab-case/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/pipes-kebab-case/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/pipes-kebab-case/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-pipes-kebab-case
+  category: Utilities
+  covers: '`LgKebabCasePipe`'
+- name: canopy-primary-message
+  kind: best-practice
+  file: skills/best-practice/primary-message/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/primary-message/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/primary-message/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-primary-message
+  category: Feedback
+  covers: '`LgPrimaryMessageComponent`, title, description, icon'
+- name: canopy-progress-indicator
+  kind: best-practice
+  file: skills/best-practice/progress-indicator/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/progress-indicator/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/progress-indicator/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-progress-indicator
+  category: Feedback
+  covers: '`LgProgressIndicatorComponent`, steps, current step'
+- name: canopy-promo-card
+  kind: best-practice
+  file: skills/best-practice/promo-card/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/promo-card/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/promo-card/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-promo-card
+  category: Data Display
+  covers: '`LgPromoCardComponent`, content limits, image requirements'
+- name: canopy-quick-action
+  kind: best-practice
+  file: skills/best-practice/quick-action/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/quick-action/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/quick-action/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-quick-action
+  category: Deprecated/Removed
+  covers: Removal notice for `lg-quick-action` and replacements using button/link patterns
+  status: Removed
+- name: canopy-separator
+  kind: best-practice
+  file: skills/best-practice/separator/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/separator/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/separator/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-separator
+  category: Foundations
+  covers: '`LgSeparatorComponent`, variants, `hasRole` input'
+- name: canopy-shadow
+  kind: best-practice
+  file: skills/best-practice/shadow/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/shadow/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/shadow/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-shadow
+  category: Utilities
+  covers: '`LgShadowDirective` — removed in v30, migration guidance'
+  status: Removed
+- name: canopy-show-at
+  kind: best-practice
+  file: skills/best-practice/show-at/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/show-at/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/show-at/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-show-at
+  category: Utilities
+  covers: '`LgShowAtDirective`, breakpoint-based visibility'
+- name: canopy-side-nav
+  kind: best-practice
+  file: skills/best-practice/side-nav/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/side-nav/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/side-nav/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-side-nav
+  category: Navigation
+  covers: Side nav full component set, mobile behaviour, router-outlet
+- name: canopy-skeleton
+  kind: best-practice
+  file: skills/best-practice/skeleton/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/skeleton/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/skeleton/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-skeleton
+  category: Feedback
+  covers: '`LgSkeletonDirective` (`[lgSkeleton]`), animation, screen reader behaviour'
+- name: canopy-spacing-margin
+  kind: best-practice
+  file: skills/best-practice/spacing-margin/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/spacing-margin/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/spacing-margin/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-spacing-margin
+  category: Foundations
+  covers: '`LgMarginDirective`, all margin inputs, breakpoint overrides'
+- name: canopy-spacing-padding
+  kind: best-practice
+  file: skills/best-practice/spacing-padding/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/spacing-padding/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/spacing-padding/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-spacing-padding
+  category: Foundations
+  covers: '`LgPaddingDirective`, all padding inputs, breakpoint overrides'
+- name: canopy-spacing-row-gap
+  kind: best-practice
+  file: skills/best-practice/spacing-row-gap/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/spacing-row-gap/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/spacing-row-gap/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-spacing-row-gap
+  category: Foundations
+  covers: '`LgRowGapDirective`, row-gap with grid containers'
+- name: canopy-spinner
+  kind: best-practice
+  file: skills/best-practice/spinner/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/spinner/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/spinner/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-spinner
+  category: Feedback
+  covers: '`LgSpinnerComponent`, sizes, accessible usage'
+- name: canopy-sr-alert-message
+  kind: best-practice
+  file: skills/best-practice/sr-alert-message/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/sr-alert-message/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/sr-alert-message/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-sr-alert-message
+  category: Feedback
+  covers: '`LgSrAlertMessageDirective`, `[lgSrAlertMessage]`, live region, screen reader only'
+- name: canopy-table
+  kind: best-practice
+  file: skills/best-practice/table/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/table/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/table/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-table
+  category: Data Display
+  covers: '`lg-table` directives, variants, expandable rows, accessibility'
+- name: canopy-tabs
+  kind: best-practice
+  file: skills/best-practice/tabs/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/tabs/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/tabs/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-tabs
+  category: Navigation
+  covers: Tabbed content vs tabbed navigation, inputs, outputs
+- name: canopy-typography
+  kind: best-practice
+  file: skills/best-practice/typography/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/typography/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/typography/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-typography
+  category: Foundations
+  covers: Productive vs expressive type, font sizes, weights, CSS variables
+- name: canopy-utils
+  kind: best-practice
+  file: skills/best-practice/utils/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/utils/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/utils/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-utils
+  category: Styles
+  covers: '`lg-visually-hidden`, `lg-unstyled-link` CSS utility classes'
+- name: canopy-writing
+  kind: best-practice
+  file: skills/best-practice/writing/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/best-practice/writing/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/best-practice/writing/SKILL.md
+  install: npx skills add Legal-and-General/canopy/skills/best-practice#vX.Y.Z --skill canopy-writing
+  category: Principles
+  covers: Tone of voice, content principles, button/link/error message copy
+- name: canopy-v21-migration
+  kind: migration
+  file: skills/canopy-v21-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v21-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v21-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v21-migration
+  migrates: v20 -> v21
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v21.0.0
+- name: canopy-v22-migration
+  kind: migration
+  file: skills/canopy-v22-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v22-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v22-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v22-migration
+  migrates: v21 -> v22
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v22.0.0
+- name: canopy-v23-migration
+  kind: migration
+  file: skills/canopy-v23-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v23-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v23-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v23-migration
+  migrates: v22 -> v23
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v23.0.0
+- name: canopy-v24-migration
+  kind: migration
+  file: skills/canopy-v24-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v24-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v24-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v24-migration
+  migrates: v23 -> v24
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v24.0.0
+- name: canopy-v25-migration
+  kind: migration
+  file: skills/canopy-v25-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v25-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v25-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v25-migration
+  migrates: v24 -> v25
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v25.0.0
+- name: canopy-v26-migration
+  kind: migration
+  file: skills/canopy-v26-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v26-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v26-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v26-migration
+  migrates: v25 -> v26
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v26.0.0
+- name: canopy-v27-migration
+  kind: migration
+  file: skills/canopy-v27-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v27-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v27-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v27-migration
+  migrates: v26 -> v27
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v27.0.0
+- name: canopy-v28-migration
+  kind: migration
+  file: skills/canopy-v28-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v28-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v28-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v28-migration
+  migrates: v27 -> v28
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v28.0.0
+- name: canopy-v29-migration
+  kind: migration
+  file: skills/canopy-v29-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v29-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v29-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v29-migration
+  migrates: v28 -> v29
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v29.0.0
+- name: canopy-v30-migration
+  kind: migration
+  file: skills/canopy-v30-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v30-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v30-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v30-migration
+  migrates: v29 -> v30
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v30.0.0
+- name: canopy-v33-migration
+  kind: migration
+  file: skills/canopy-v33-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v33-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v33-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v33-migration
+  migrates: v32 -> v33
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v33.0.0
+- name: canopy-v34-migration
+  kind: migration
+  file: skills/canopy-v34-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v34-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v34-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v34-migration
+  migrates: v33 -> v34
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v34.0.0
+- name: canopy-v35-migration
+  kind: migration
+  file: skills/canopy-v35-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v35-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v35-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v35-migration
+  migrates: v34 -> v35
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v35.0.0
+- name: canopy-v36-migration
+  kind: migration
+  file: skills/canopy-v36-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v36-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v36-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v36-migration
+  migrates: v35 -> v36
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v36.0.0
+- name: canopy-v37-migration
+  kind: migration
+  file: skills/canopy-v37-migration/SKILL.md
+  url: https://github.com/Legal-and-General/canopy/blob/master/skills/canopy-v37-migration/SKILL.md
+  raw: https://raw.githubusercontent.com/Legal-and-General/canopy/master/skills/canopy-v37-migration/SKILL.md
+  install: npx skills add Legal-and-General/canopy --skill canopy-v37-migration
+  migrates: v36 -> v37
+  release_notes: https://github.com/Legal-and-General/canopy/releases/tag/v37.0.0

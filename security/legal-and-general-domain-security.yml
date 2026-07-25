@@ -1,0 +1,79 @@
+generated: '2026-07-25'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts plus every Legal & General host found in DNS
+hosts:
+- host: www.legalandgeneral.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan  2 23:59:59 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: group.legalandgeneral.com
+  https: true
+  tls_version: TLSv1.3
+  hsts: true
+  hsts_max_age: 16070300
+  hsts_include_subdomains: true
+- host: am.landg.com
+  https: true
+  tls_version: TLSv1.3
+  hsts: true
+  hsts_max_age: 16070300
+  hsts_include_subdomains: true
+- host: fundcentres.lgim.com
+  https: true
+  tls_version: TLSv1.2
+  hsts: true
+  hsts_max_age: 15724800
+  hsts_include_subdomains: true
+- host: sandbox.legalandgeneral.com
+  https: true
+  tls_version: TLSv1.3
+  hsts: false
+  http_status: 403
+  note: CloudFront distribution, locked down — 403 with a 27-byte body on every path
+- host: api.lgamerica.com
+  https: true
+  tls_version: TLSv1.3
+  hsts: false
+  http_status: 403
+  note: Azure Traffic Manager / IIS backend of the former US protection arm; no public surface
+- host: api.landg.com
+  https: false
+  tls_version: null
+  hsts: null
+  note: >-
+    A record present (194.63.117.10) but TCP/443 is filtered — no TLS handshake
+    completes and every HTTPS request times out. Network-gated partner host.
+domains:
+- domain: legalandgeneral.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: landg.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+  dmarc_subdomain_policy: reject
+- domain: lgim.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+  dmarc_subdomain_policy: reject
+- domain: lgamerica.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+  note: former US protection arm; weakest posture of the group (p=none, SPF ~all)
+findings:
+- All primary web hosts serve TLS 1.3 with HSTS; fundcentres.lgim.com negotiates TLS 1.2.
+- No domain in the group publishes CAA records or has DNSSEC enabled.
+- SPF and DMARC are present on all four registrable domains; the three UK domains enforce p=reject.

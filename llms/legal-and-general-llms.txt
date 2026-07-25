@@ -1,0 +1,51 @@
+# Legal & General
+
+> Legal & General Group plc is a FTSE 100 UK life insurer, retirement and institutional asset manager, regulated by the FCA and PRA. It writes life and protection insurance, workplace and individual pensions, annuities and bulk-purchase annuity/pension risk transfer, equity release through Legal & General Home Finance, and asset management through Legal & General Investment Management. Legal & General publishes **no public API**: no developer portal, no API reference, no OpenAPI/Swagger/AsyncAPI/GraphQL/gRPC contract, and no public Postman workspace. Its real APIs are bilateral, partner-gated integrations announced by the counterparty. This file records what Legal & General does publish, and what it does not.
+
+<!-- generated: 2026-07-25 | method: generated | source: apis.yml + repo artifacts (no provider /llms.txt exists; probed on 5 hosts, all HTTP 404) -->
+
+## API posture
+
+- **No public API.** `developer.`, `developers.`, `api.`, `apis.`, `docs.legalandgeneral.com` do not resolve. `/developers`, `/developer`, `/api`, `/partners`, `/integrations`, `/openapi.json`, `/swagger.json`, `/api-docs` all return HTTP 404 on the primary site.
+- **No /.well-known/ discovery.** security.txt, openid-configuration, oauth-authorization-server, api-catalog and ai-plugin.json return 404 on every host — see well-known/legal-and-general-well-known.yml.
+- **Two gated API hosts exist.** `api.landg.com` resolves but TCP/443 is filtered (no TLS handshake). `sandbox.legalandgeneral.com` resolves to CloudFront and returns HTTP 403 on every path. Both are real infrastructure with zero public surface.
+- **Real integrations, partner-only.** Legal & General Home Finance supplies real-time equity release quotations, KFIs and applications into Iress "The Exchange", Air Sourcing and Advise Wise; Legal & General Mortgage Club integrates with Kensington Mortgages; protection quote-and-apply runs through OLP Connect. None is obtainable by an unaffiliated developer.
+- **Adviser identity runs on Origo/Unipass**, the UK life-and-pensions analogue of ACORD. No ACORD, AL3 or NGDS reference exists in Legal & General's public surface.
+
+## What Legal & General does publish for developers
+
+- [Canopy design system](https://github.com/Legal-and-General/canopy): the Legal & General design system in Angular. Apache-2.0. Distributed as `@legal-and-general/canopy` via GitHub Packages (authenticated), not public npm.
+- [Canopy Storybook](https://legal-and-general.github.io/canopy/?path=/docs/welcome--docs): browsable component documentation.
+- [Canopy Copilot skills](https://github.com/Legal-and-General/canopy/blob/master/docs/COPILOT_SKILLS.md): 84 installable agent skills — 69 component best-practice skills and 15 per-major-version migration skills — MIT licensed, installable with `npx skills add Legal-and-General/canopy`, compatible with GitHub Copilot, Claude Code and Cursor.
+- [Canopy agentic AI configuration](https://github.com/Legal-and-General/canopy/blob/master/docs/AGENTIC_AI.md): four Copilot coding agents (Dependency Updater, Migration Guide Writer, Migration Skill Generator, Best Practice Skill Generator).
+- [Canopy design tokens](https://github.com/Legal-and-General/canopy-design-tokens): Style Dictionary tokens generated from Figma.
+- [dependabot-batcher](https://github.com/Legal-and-General/dependabot-batcher): a GitHub Action that batches Dependabot PRs.
+- [Canopy releases](https://github.com/Legal-and-General/canopy/releases): dated release notes, semver, currently v37.0.0 (2026-07-23).
+- [Breaking change policy](https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md) and [security policy](https://github.com/Legal-and-General/canopy/blob/master/docs/SECURITY.md).
+
+## Repo artifacts
+
+- packages/legal-and-general-packages.yml — first-party packages (no API SDK exists)
+- components/legal-and-general-components.yml — Canopy component families
+- skills/_index.yml — catalog of all 84 published agent skills
+- changelog/legal-and-general-changelog.yml — Canopy release history
+- lifecycle/legal-and-general-lifecycle.yml — API lifecycle absence + Canopy versioning/deprecation policy
+- conformance/legal-and-general-conformance.yml — standards posture (Origo/Unipass, WCAG 2.1 AA, semver; no OpenAPI/OAuth/ACORD)
+- security/legal-and-general-domain-security.yml — TLS/HSTS/DNSSEC/CAA/SPF/DMARC probes
+- security/legal-and-general-vulnerability-disclosure.yml — the only published reporting route (Canopy repo)
+- well-known/legal-and-general-well-known.yml — full /.well-known/ probe record
+- review.yml — the full 2026-07-25 developer-surface review
+
+## Company links
+
+- [Website](https://www.legalandgeneral.com/)
+- [Corporate site](https://group.legalandgeneral.com/)
+- [Newsroom](https://group.legalandgeneral.com/en/newsroom/press-releases)
+- [GitHub organisation](https://github.com/Legal-and-General)
+- [Adviser area (login wall, not a developer portal)](https://www.legalandgeneral.com/adviser/)
+- [Contact us](https://www.legalandgeneral.com/contact-us/)
+- [Help](https://www.legalandgeneral.com/help/)
+- [Privacy notice](https://www.legalandgeneral.com/privacy-notice/)
+- [Digital services terms and conditions](https://www.legalandgeneral.com/legal-information/)
+- [Accessibility statement](https://www.legalandgeneral.com/accessibility/)
+- [Security information](https://www.legalandgeneral.com/security/)

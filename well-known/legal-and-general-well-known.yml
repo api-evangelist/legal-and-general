@@ -1,0 +1,100 @@
+generated: '2026-07-25'
+method: searched
+source: live probes of every Legal & General host found in apis.yml, review.yml and DNS
+summary: >-
+  Legal & General serves NO /.well-known/ discovery documents on any host. All
+  five candidate documents were probed on all five reachable web hosts (25
+  probes) and every one returned HTTP 404 — or, on the two hosts that front an
+  API gateway, HTTP 403 with no body. There is nothing to save verbatim; the
+  absence is the finding. No apis.yml WellKnown pointer is emitted, because no
+  well-known document exists.
+documents_found: 0
+hosts:
+- host: https://www.legalandgeneral.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://group.legalandgeneral.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://am.landg.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://www.landg.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://sandbox.legalandgeneral.com
+  note: >-
+    NEW in this round — this host resolves (CloudFront d1g90d33dc1gor.cloudfront.net)
+    but every path returns HTTP 403 with a 27-byte body. It is a locked-down
+    distribution, not a public sandbox. No Sandbox artifact or pointer is emitted.
+  documents:
+  - {path: /, status: 403}
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /openapi.json, status: 403}
+  - {path: /swagger.json, status: 403}
+  - {path: /api-docs, status: 403}
+  - {path: /docs, status: 403}
+  - {path: /graphql, status: 403}
+- host: https://api.landg.com
+  note: >-
+    NEW in this round — an A record exists (194.63.117.10) but TCP/443 is
+    filtered: every HTTPS request times out (curl exit 000, no TLS handshake).
+    A real API host that is network-gated to partners.
+  documents:
+  - {path: /, status: 000, note: connection timeout}
+  - {path: /openapi.json, status: 000}
+  - {path: /swagger.json, status: 000}
+  - {path: /api-docs, status: 000}
+  - {path: /graphql, status: 000}
+- host: https://api.lgamerica.com
+  note: >-
+    Belongs to the former US protection arm. Azure/IIS backend returning 403 on
+    the root; spec paths 404. No documentation, no discovery, no public surface.
+  documents:
+  - {path: /, status: 403}
+  - {path: /openapi.json, status: 404}
+  - {path: /swagger.json, status: 404}
+  - {path: /.well-known/security.txt, status: 404}
+dns_probes:
+  resolving:
+  - {host: sandbox.legalandgeneral.com, record: d1g90d33dc1gor.cloudfront.net}
+  - {host: api.landg.com, record: 194.63.117.10}
+  - {host: api.lgamerica.com, record: lga-si-exttfmgr-prd-01.trafficmanager.net}
+  - {host: fundcentres.lgim.com, record: 104.16.223.203 (Cloudflare)}
+  - {host: adviser.legalandgeneral.com, record: go.pardot.com (marketing automation, not a portal)}
+  nxdomain:
+  - developer.legalandgeneral.com
+  - developers.legalandgeneral.com
+  - api.legalandgeneral.com
+  - apis.legalandgeneral.com
+  - docs.legalandgeneral.com
+  - partner.legalandgeneral.com
+  - partners.legalandgeneral.com
+  - developer.landg.com
+  - apis.landg.com
+  - api.lgim.com
+  - developer.lgim.com
+  - olpconnect.legalandgeneral.com
+  - api.legalandgeneralamerica.com
+  - status.legalandgeneral.com
