@@ -59,6 +59,17 @@ modified: '2026-07-25'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: IssueTracker
+  url: https://github.com/Legal-and-General/canopy/issues
+- type: Releases
+  url: https://github.com/Legal-and-General/canopy/releases
+- type: CodeOfConduct
+  url: https://github.com/Legal-and-General/canopy/blob/master/docs/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/Legal-and-General/canopy/blob/master/docs/CONTRIBUTING.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/Legal-and-General/canopy/blob/master/LICENSE
 - type: DomainSecurity
   url: security/legal-and-general-domain-security.yml
 - type: VulnerabilityDisclosure
