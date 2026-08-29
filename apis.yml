@@ -1,5 +1,8 @@
 aid: legal-and-general
 url: https://raw.githubusercontent.com/api-evangelist/legal-and-general/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "Its API posture reflects that distribution model honestly: Legal & General publishes NO public, self-serve developer portal, no public API reference, and no downloadable OpenAPI or Swagger definition."
 name: Legal & General
 kind: company
 description: >-
