@@ -76,12 +76,11 @@ tags:
 - Asset Management
 - Underwriting
 - Carrier
-- Brokers
 - Partner Gated
 - No Public API
 - Design Systems
 - Agent Skills
-- Open-Source
+- Open Source
 tags_raw:
 - Insurance
 - United Kingdom
@@ -93,12 +92,12 @@ tags_raw:
 - Asset Management
 - Underwriting
 - Carrier
-- Broker
 - Partner Gated
 - No Public API
 - Design System
 - Agent Skills
 - Open Source
+- Open-Source
 created: '2026-07-25'
 modified: '2026-07-25'
 specificationVersion: '0.23'
@@ -166,3 +165,5 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-tags-removed:
+- Brokers
