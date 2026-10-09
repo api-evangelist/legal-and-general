@@ -58,6 +58,9 @@ accessModel:
   trial: false
   try_now: false
   public: false
+  gated: partner
+  gated_source:
+  - tag:Partner Gated
   label: Unknown
   confidence: low
   source:
@@ -76,8 +79,6 @@ tags:
 - Asset Management
 - Underwriting
 - Carrier
-- Partner Gated
-- No Public API
 - Design Systems
 - Agent Skills
 - Open Source
@@ -92,8 +93,6 @@ tags_raw:
 - Asset Management
 - Underwriting
 - Carrier
-- Partner Gated
-- No Public API
 - Design System
 - Agent Skills
 - Open Source
@@ -167,3 +166,5 @@ maintainers:
   email: kin@apievangelist.com
 x-tags-removed:
 - Brokers
+- No Public API
+- Partner Gated
