@@ -79,7 +79,6 @@ tags:
 - Asset Management
 - Underwriting
 - Carrier
-- Design Systems
 - Agent Skills
 - Open Source
 tags_raw:
@@ -93,7 +92,6 @@ tags_raw:
 - Asset Management
 - Underwriting
 - Carrier
-- Design System
 - Agent Skills
 - Open Source
 - Open-Source
@@ -168,3 +166,4 @@ x-tags-removed:
 - Brokers
 - No Public API
 - Partner Gated
+- Design Systems
