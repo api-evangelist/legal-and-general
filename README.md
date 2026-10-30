@@ -1,4 +1,4 @@
-# Legal & General (legal-and-general)
+# Legal & General
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,92 +64,86 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Legal & General Group plc is a FTSE 100 United Kingdom life insurer, retirement and institutional asset manager headquartered in London and regulated by the FCA and PRA. Its lines of business are life and protection insurance (term life, critical illness, income protection), workplace and individual pensions, annuities and bulk-purchase annuity/pension risk transfer, equity release through Legal & General Home Finance, and asset management through Legal & General Investment Management. It distributes almost entirely through regulated intermediaries — financial advisers, mortgage brokers and employee-benefit consultants — and its API posture follows that model exactly.
+Legal & General Group plc is a FTSE 100 United Kingdom life insurer, retirement and institutional asset manager headquartered in London and regulated by the FCA and PRA. Its lines of business are life and protection insurance (term life, critical illness, income protection), workplace and individual pensions, annuities and bulk-purchase annuity/pension risk transfer, equity release through Legal & General Home Finance, and asset management through Legal & General Investment Management. It is a life and health carrier rather than a general insurer, and it distributes almost entirely through regulated intermediaries — financial advisers, mortgage brokers and employee-benefit consultants — rather than direct-to-developer. Its API posture reflects that distribution model honestly: Legal & General publishes NO public, self-serve developer portal, no public API reference, and no downloadable OpenAPI or Swagger definition. No developer.legalandgeneral.com, developers, docs, or api subdomain resolves in DNS, and /developers, /api, /developer, /partners and /integrations all return HTTP 404 on the primary site. Every documented Legal & General API is a bilateral, partner-gated integration announced by the counterparty rather than published by Legal & General — real-time equity release quotation, KFI and application APIs wired into Iress "The Exchange", Air Sourcing and the Advise Wise platform, a Mortgage Club integration with Kensington Mortgages, and adviser-facing protection quote-and-apply through OLP Connect. Adviser identity and messaging run on the UK's Origo rails — Unipass digital certificates, Unipass Letter of Authority and Origo Track My Apps — which is the UK life and pensions analogue of ACORD; no ACORD, AL3, ACORD XML or NGDS reference appears anywhere in Legal & General's public surface. The only public Legal & General code is the Canopy design system on GitHub — an Apache-2.0 Angular component library shipped through GitHub Packages, with dated semver release notes, a published breaking-change policy, a repository security policy, and 84 installable agent skills (69 component best-practice skills and 15 per-major migration skills) that work with GitHub Copilot, Claude Code and Cursor. That makes Legal & General agent-native on the front end and completely closed on the API. This record exists to measure that split accurately: a large carrier whose integration surface is entirely intermediary-gated and invisible from outside a login wall.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/legal-and-general/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/legal-and-general/refs/heads/main/apis.yml)
+**Areas:** Insurance · United Kingdom · Life Insurance · Health Insurance · Employee Benefits · Pensions · Annuities · Asset Management · Underwriting · Carrier · Design Systems · Agent Skills
 
-## API Posture — No Public API
+## Legal & General on APIs.io
 
-Legal & General publishes **no public, self-serve developer portal**, **no public API reference**, and **no downloadable OpenAPI or Swagger definition**. Reviewed 2026-07-25:
+Everything profiled for Legal & General is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/legal-and-general/](https://apis.io/providers/legal-and-general/)** — or go straight to one of the APIs or properties below.
 
-- `developer.`, `developers.`, `docs.`, `api.` and `apis.legalandgeneral.com` — **no DNS record**
-- `/developers`, `/developer`, `/api`, `/partners`, `/integrations` — **HTTP 404**
-- `/openapi.json`, `/swagger.json`, `/api-docs` — **HTTP 404**
-- `/.well-known/openid-configuration`, `/.well-known/oauth-authorization-server` — **HTTP 404**
+### Published properties
 
-The nearest integration surface is the [adviser area](https://www.legalandgeneral.com/adviser/) (HTTP 200), which is a **login wall** for regulated financial advisers, not a developer portal. It carries Login and Register links and exposes no reference documentation, schemas or self-serve credentials.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Legal & General's APIs are real but **bilateral and partner-gated**, announced by the counterparty rather than published by Legal & General:
+#### Security (2)
 
-- Legal & General Home Finance real-time equity release **quotations, KFIs and applications** into Iress' *The Exchange* adviser portal
-- Equivalent API links into the **Air Sourcing** and **Advise Wise** platforms
-- Legal & General Mortgage Club API integration with **Kensington Mortgages**
-- Protection **quote-and-apply** through **OLP Connect** and the Existing Business Agent Hub, behind adviser login
+Authentication, trust centre, and vulnerability disclosure.
 
-### Quote / Bind / Issue / FNOL
+- [Legal And General Domain Security](https://apis.io/security/legal-and-general/legal-and-general-domain-security/)
+- [Legal And General Vulnerability Disclosure](https://apis.io/security/legal-and-general/legal-and-general-vulnerability-disclosure/)
 
-| Verb | Exposed | Access |
-| --- | --- | --- |
-| Quote | Yes | Partner-only (adviser platforms, OLP Connect) |
-| Bind | Yes | Partner-only |
-| Issue | No | None documented |
-| FNOL / Claims | No | None documented |
+## Where to find this API
 
-### ACORD Posture
-
-**No ACORD reference found.** No occurrence of ACORD, AL3, ACORD XML, ACORD certified or NGDS appears anywhere in Legal & General's public surface. That is expected — ACORD's AL3/IVANS agency-download rails are a US property-and-casualty phenomenon, and Legal & General is a UK life, health and pensions carrier. The functional UK equivalent it does use is **Origo**, the UK life and pensions messaging and standards body: Unipass digital certificates as adviser identity, Origo's Unipass Letter of Authority (adopted for workplace pensions), and Origo Track My Apps for adviser case tracking.
-
-### Auth
-
-No public API authentication scheme is documented. Adviser access uses session login with optional **Unipass X.509 digital certificate** association. Partner integration credentialing is bilateral and unpublished.
-
-### Webhooks / Events / Postman / GraphQL
-
-None. No event catalog, no AsyncAPI, no public Postman workspace, no GraphQL surface, no published `.proto`. Absence is the finding.
-
-## What Legal & General *does* publish (enrichment round 2026-07-25)
-
-Legal & General is closed on the API and unusually open on the front end. Its [Canopy design system](https://github.com/Legal-and-General/canopy) is a genuine, actively released open-source project — and it is **agent-native**:
-
-- **84 installable agent skills** — 69 component best-practice skills and 15 per-major-version migration skills, MIT licensed, installed with `npx skills add Legal-and-General/canopy`, compatible with GitHub Copilot, Claude Code, Cursor and 40+ other agents. See [`skills/_index.yml`](skills/_index.yml) and the [published catalog](https://github.com/Legal-and-General/canopy/blob/master/docs/COPILOT_SKILLS.md).
-- **Four Copilot coding agents** in `.github/agents/` (Dependency Updater, Migration Guide Writer, Migration Skill Generator, Best Practice Skill Generator) — documented in [`docs/AGENTIC_AI.md`](https://github.com/Legal-and-General/canopy/blob/master/docs/AGENTIC_AI.md).
-- **Dated release history** — semver via semantic-release, currently **v37.0.0 (2026-07-23)**, 20 releases between 2026-06-30 and 2026-07-23.
-- **A published breaking-change policy** ([`docs/BREAKING_CHANGES.md`](https://github.com/Legal-and-General/canopy/blob/master/docs/BREAKING_CHANGES.md)) and a **repository security policy** ([`docs/SECURITY.md`](https://github.com/Legal-and-General/canopy/blob/master/docs/SECURITY.md)) — the only vulnerability-reporting route Legal & General publishes anywhere.
-- **`@legal-and-general/canopy`** ships through **GitHub Packages**, not public npm, so even the design system needs an authenticated token. No package exists on npm, PyPI, Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist or crates.io.
-
-Two previously unrecorded API hosts were found in DNS this round, and both confirm the partner-gated pattern rather than contradicting it: **`api.landg.com`** resolves but has TCP/443 filtered (no TLS handshake completes), and **`sandbox.legalandgeneral.com`** resolves to CloudFront and returns HTTP 403 on every path. Neither is a public sandbox or a developer portal.
-
-There is still **no corporate security.txt, no bug bounty, no trust centre, no named certification, no status page and no `/.well-known/` document on any host** — 25 well-known probes across five hosts, all 404.
-
-## Tags
-
-- Insurance
-- United Kingdom
-- Life Insurance
-- Health Insurance
-- Employee Benefits
-- Pensions
-- Annuities
-- Asset Management
-- Underwriting
-- Carrier
-- Broker
-- Partner Gated
-- No Public API
-
-## Timestamps
-
-- **Created:** 2026-07-25
-- **Modified:** 2026-07-25
-
-## APIs
-
-None listed. There is no real, documented, publicly accessible Legal & General API to catalog. See [review.yml](review.yml) for the full probe record and provenance.
-
-## Links
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.legalandgeneral.com/)
-- [Corporate Website](https://group.legalandgeneral.com/)
-- [Newsroom](https://group.legalandgeneral.com/en/newsroom/press-releases)
-- [GitHub Organization](https://github.com/Legal-and-General) — front-end design system (Canopy) only, no API artifacts
-- [Login](https://www.legalandgeneral.com/log-in/)
+- [Support](https://www.legalandgeneral.com/contact-us/)
+- [Blog](https://group.legalandgeneral.com/en/newsroom/press-releases)
+- [Security](https://github.com/Legal-and-General/canopy/blob/master/docs/SECURITY.md)
+- [Terms of service](https://www.legalandgeneral.com/legal-information/)
+- [Privacy policy](https://www.legalandgeneral.com/privacy-notice/)
+- [GitHub](https://github.com/Legal-and-General)
+
+## API Evangelist rating
+
+**Kin Score 26.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 27.6 |
+
+**Agent readiness 3.6** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.9** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/legal-and-general/](https://apis.io/providers/legal-and-general/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Legal & General: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/legal-and-general/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
